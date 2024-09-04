@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
-    <AssemblyName>aod-NET6</AssemblyName>
+    <AssemblyName>AnimOfDots-NET6</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
@@ -11,7 +11,7 @@
     <StartupObject />
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>AnimOfDots .NET6</Title>
-    <Authors>aot,BatLine</Authors>
+    <Authors>aod,BatLine</Authors>
     <Product>AnimOfDots .NET6</Product>
     <Description>AnimOfDots Ported to .NET6
 
