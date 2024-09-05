@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <OutputType>Library</OutputType>
+	  <TargetFrameworks>net8.0-windows;net6.0-windows;net5.0-windows;netcoreapp3.1</TargetFrameworks>
+	  <OutputType>Library</OutputType>
     <AssemblyName>AnimOfDots-NET6</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+	  <Version>1.0.1</Version>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -13,7 +14,7 @@
     <Title>AnimOfDots .NET6</Title>
     <Authors>aod,BatLine</Authors>
     <Product>AnimOfDots .NET6</Product>
-    <Description>AnimOfDots Ported to .NET6
+    <Description>AnimOfDots Ported to multiple .NET versions.
 
 Animation of loading with dots for C# and VB.NET</Description>
     <PackageProjectUrl>https://github.com/BatLine/AnimOfDots-.NET6</PackageProjectUrl>
@@ -21,10 +22,16 @@ Animation of loading with dots for C# and VB.NET</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/BatLine/AnimOfDots-.NET6</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>loading;loadingindicator;waitingbar;spinner;.NET6</PackageTags>
-    <PackageReleaseNotes>Initial release of .NET 6 ported version</PackageReleaseNotes>
+    <PackageTags>loading;loadingindicator;waitingbar;spinner;.NET6,.NET8,.NET5,.NET Core 3.1</PackageTags>
+    <PackageReleaseNotes>Support for multiple .NET versions including .NET 8, 6, 5, Core 3.1</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
   <ItemGroup>
     <None Include="..\icon.png">
       <Pack>True</Pack>
