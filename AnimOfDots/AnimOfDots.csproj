@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-	  <TargetFrameworks>net8.0-windows;net6.0-windows;net5.0-windows;netcoreapp3.1</TargetFrameworks>
+	  <TargetFrameworks>net8.0-windows;net7.0-windows;net6.0-windows;net5.0-windows;netcoreapp3.1;net472;net48</TargetFrameworks>
 	  <OutputType>Library</OutputType>
     <AssemblyName>BatLine.AnimOfDots</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-	  <Version>2.0.0</Version>
+	  <Version>3.0.0</Version>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -22,8 +22,8 @@ Animation of loading with dots for C# and VB.NET</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/BatLine/AnimOfDots-.NET6</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>loading;loadingindicator;waitingbar;spinner;.NET6,.NET8,.NET5,.NET Core 3.1</PackageTags>
-    <PackageReleaseNotes>Support for multiple .NET versions including .NET 8, 6, 5, Core 3.1</PackageReleaseNotes>
+    <PackageTags>loading;loadingindicator;waitingbar;spinner;.NET6,.NET8,.NET5,.NET7,.NET Core 3.1,.NET Framework 4.7.2,.NET Framework 4.8</PackageTags>
+    <PackageReleaseNotes>Support for multiple .NET versions including .NET 8, 7, 6, 5, Core 3.1, Framework 4.7.2, 4.8</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
