@@ -31,6 +31,7 @@
             circular1 = new Circular();
             pulse1 = new Pulse();
             multiplePulse1 = new MultiplePulse();
+            multiplePulse2 = new MultiplePulse();
             SuspendLayout();
             // 
             // circular1
@@ -62,15 +63,25 @@
             multiplePulse1.Size = new Size(48, 48);
             multiplePulse1.TabIndex = 2;
             // 
-            // Form1
+            // multiplePulse2
+            // 
+            multiplePulse2.AnimationSpeed = 68;
+            multiplePulse2.BackColor = Color.Transparent;
+            multiplePulse2.Location = new Point(168, 24);
+            multiplePulse2.Name = "multiplePulse2";
+            multiplePulse2.Size = new Size(20, 20);
+            multiplePulse2.TabIndex = 3;
+            // 
+            // DemoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(256, 248);
+            Controls.Add(multiplePulse2);
             Controls.Add(multiplePulse1);
             Controls.Add(pulse1);
             Controls.Add(circular1);
-            Name = "Form1";
+            Name = "DemoForm";
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
@@ -81,5 +92,6 @@
         private Circular circular1;
         private Pulse pulse1;
         private MultiplePulse multiplePulse1;
+        private MultiplePulse multiplePulse2;
     }
 }

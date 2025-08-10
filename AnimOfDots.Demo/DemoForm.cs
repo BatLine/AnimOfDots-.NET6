@@ -14,6 +14,7 @@ namespace AnimOfDots.Demo
             multiplePulse1.ForeColor = Color.FromArgb(255, 128, 0);
             multiplePulse1.Start();
             circular1.Start();
+            multiplePulse2.Start();
         }
     }
 }
