@@ -8,6 +8,8 @@
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 		<EnableWindowsTargeting>true</EnableWindowsTargeting>
 		<Version>3.0.2</Version>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>..\AnimOfDots.snk</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
 	<PropertyGroup>
 		<StartupObject />
@@ -26,7 +28,7 @@
 		<RepositoryUrl>https://github.com/BatLine/AnimOfDots-.NET6</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>loading;loadingindicator;waitingbar;spinner;winforms;net5;net6;net7;net8;net9;net462;wpf</PackageTags>
-		<PackageReleaseNotes>Performance improvements.</PackageReleaseNotes>
+		<PackageReleaseNotes>Performance improvements + Strong named assembly.</PackageReleaseNotes>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
