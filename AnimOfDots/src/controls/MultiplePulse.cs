@@ -31,10 +31,11 @@ namespace AnimOfDots {
         }
 
         private void UpdateDotsSize() {
-            dotSize[0] = Height - (Height / 3);
-            dotSize[1] = Height / 2;
-            dotSize[2] = Height / 3;
-            dotSize[3] = Height * 0.1f;
+            float h = Height;
+            dotSize[0] = h - (h / 3f);
+            dotSize[1] = h / 2f;
+            dotSize[2] = h / 3f;
+            dotSize[3] = h * 0.1f;
         }
 
         private void UpdateDotsOpacity() {
@@ -44,9 +45,11 @@ namespace AnimOfDots {
         }
 
         private void UpdateRectangles() {
+            float w = Width / 2f;
+            float h = Height / 2f;
             for (int i = 0; i < rects.Length; i++) {
-                rects[i].X = (Width / 2) - (dotSize[i] / 2);
-                rects[i].Y = (Height / 2) - (dotSize[i] / 2);
+                rects[i].X = w - (dotSize[i] / 2f);
+                rects[i].Y = h - (dotSize[i] / 2f);
                 rects[i].Width = dotSize[i];
                 rects[i].Height = dotSize[i];
             }
