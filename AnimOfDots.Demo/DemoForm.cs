@@ -14,15 +14,6 @@ namespace AnimOfDots.Demo
             multiplePulse1.ForeColor = Color.FromArgb(255, 128, 0);
             multiplePulse1.Start();
             circular1.Start();
-            multiplePulse2.Start();
-            multiplePulse3.Start();
-            multiplePulse4.Start();
-            multiplePulse5.Start();
-            multiplePulse6.Start();
-            multiplePulse7.Start();
-            multiplePulse8.Start();
-            multiplePulse9.Start();
-            multiplePulse10.Start();
         }
 
         private void chkRunning_CheckedChanged(object sender, EventArgs e)

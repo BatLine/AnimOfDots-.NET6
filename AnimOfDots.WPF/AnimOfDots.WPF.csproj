@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net5.0-windows;net462</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
+		<OutputType>Library</OutputType>
+		<RootNamespace>AnimOfDots.WPF</RootNamespace>
+		<EnableWindowsTargeting>true</EnableWindowsTargeting>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\AnimOfDots\AnimOfDots.csproj" />
+	</ItemGroup>
+</Project>
