@@ -13,7 +13,7 @@ namespace AnimOfDots {
         private readonly RectangleF[] rectF = new RectangleF[2];
         private int angle = 0;
 
-        private SolidBrush primaryColor = new SolidBrush(Color.DodgerBlue);
+        private readonly SolidBrush primaryColor = new SolidBrush(Color.DodgerBlue);
         public Color PrimaryColor {
             get { return primaryColor.Color; }
             set {
@@ -22,7 +22,7 @@ namespace AnimOfDots {
             }
         }
 
-        private SolidBrush secondaryColor = new SolidBrush(Color.Orange);
+        private readonly SolidBrush secondaryColor = new SolidBrush(Color.Orange);
         public Color SecondaryColor {
             get { return secondaryColor.Color; }
             set {

@@ -1,7 +1,7 @@
 ﻿<Window x:Class="AnimOfDots.WPF.Demo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="clr-namespace:AnimOfDots.WPF.Controls;assembly=AnimOfDots.WPF"
+        xmlns:controls="clr-namespace:AnimOfDots.WPF.Controls;assembly=BatLine.AnimOfDots.WPF"
         Title="AnimOfDots Demo" Height="450" Width="800">
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -41,7 +41,7 @@
                 <TextBlock Text="DotGridFlashing" HorizontalAlignment="Center" />
             </StackPanel>
             <StackPanel Margin="5">
-                <controls:DotScaling x:Name="DotScalingControl" Width="50" Height="50" />
+                <controls:DotScaling x:Name="DotScalingControl" Width="80" Height="20" />
                 <TextBlock Text="DotScaling" HorizontalAlignment="Center" />
             </StackPanel>
             <StackPanel Margin="5">
