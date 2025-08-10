@@ -1,28 +1,27 @@
 
 # AnimOfDots (Loading Indicator)
-[.NET WinForms] Animation of loading with dots for C# and VB.NET
+[.NET WinForms/WPF] Loading animations for C# WinForms, VB.NET and WPF.
 #
 Preview:
 
-<img src="https://raw.githubusercontent.com/mt-alts/AnimOfDots/main/preview.gif"/>
+![Preview animation](https://raw.githubusercontent.com/mt-alts/AnimOfDots/main/preview.gif)
 
-<table>
-  <tr>
-    <td>Pulse</td>
-    <td>Circular</td>
-    <td>DotScaling</td>
-  </tr>
-  <tr>
-    <td>DotGridFlashing</td>
-    <td>MultiplePulse</td>
-    <td>DoubleDotSpin</td>
-  </tr>
-    <tr>
-    <td>DotTyping</td>
-    <td>Overlay</td>
-    <td>DotFlashing</td>
-  </tr>
-</table>
+| Pulse           | Circular        | DotScaling      |
+|-----------------|----------------|-----------------|
+| DotGridFlashing | MultiplePulse   | DoubleDotSpin   |
+| DotTyping       | Overlay         | DotFlashing     |
+
+## WPF Support
+The package includes a WPF wrapper project that hosts the WinForms
+spinners inside a `WindowsFormsHost`. This allows the same animations to
+be used in WPF applications.
+
+```xaml
+<Window
+    xmlns:aodw="clr-namespace:AnimOfDots.WPF.Controls;assembly=AnimOfDots.WPF">
+    <aodw:DotFlashing Running="True" />
+</Window>
+```
 
 #
 
@@ -31,6 +30,8 @@ Preview:
 | Property or Method | Type  | Description |
 | :-------- | :------- | :------------------------- |
 | AnimationSpeed | Property | Changes animation speed |
+| Running | Property | Indicates whether the animation is running |
+| HideOnStop | Property | Hides the indicator when the animation is stopped |
 | BackColor | Property | Changes the background color of the indicator |
 | Start() | Method | Start animating |
 | Stop() | Method | Stop animating |
