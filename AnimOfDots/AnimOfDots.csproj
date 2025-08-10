@@ -16,9 +16,9 @@
 		<Authors>aod,BatLine</Authors>
 		<Product>BatLine.AnimOfDots</Product>
 		<Description>
-			AnimOfDots Ported to multiple .NET versions (Including WPF).
+			AnimOfDots Ported to multiple .NET versions.
 
-			Loading animations for C# WinForms, VB.NET and WPF.
+			Loading animations for C# WinForms and VB.NET.
 		</Description>
 		<PackageProjectUrl>https://github.com/BatLine/AnimOfDots-.NET6</PackageProjectUrl>
 		<PackageIcon>icon.png</PackageIcon>
@@ -26,7 +26,7 @@
 		<RepositoryUrl>https://github.com/BatLine/AnimOfDots-.NET6</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>loading;loadingindicator;waitingbar;spinner;winforms;net5;net6;net7;net8;net9;net462;wpf</PackageTags>
-		<PackageReleaseNotes>Targets .NET 5 or later and .NET Framework 4.6.2+ for broader compatibility. Added public properties to the spinners. Fixed some flickering on smaller sizes. Added support for WPF.</PackageReleaseNotes>
+		<PackageReleaseNotes>Targets .NET 5 or later and .NET Framework 4.6.2+ for broader compatibility. Added public properties to the spinners. Fixed some flickering on smaller sizes.</PackageReleaseNotes>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
