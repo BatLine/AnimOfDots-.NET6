@@ -1,27 +1,28 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace AnimOfDots {
-    public class ColorBlender {
+namespace AnimOfDots
+{
+    public sealed class ColorBlender
+    {
+        private const int angle = 360;
+        private readonly ColorBlend colorBlend;
 
-        private readonly Color[] colors;
-        private readonly float[] positions;
-        private readonly int angle = 360;
-
-        public ColorBlender(Color[] colors, float[] positions) {
-            this.colors = colors;
-            this.positions = positions;
+        public ColorBlender(Color[] colors, float[] positions)
+        {
+            colorBlend = new ColorBlend(colors.Length) { Colors = colors, Positions = positions };
         }
 
-        public Bitmap BlendBitmap(Bitmap bitmap) {
-            using (Graphics graphics = Graphics.FromImage(bitmap)) {
+        public Bitmap BlendBitmap(Bitmap bitmap)
+        {
+            using (Graphics graphics = Graphics.FromImage(bitmap))
+            {
                 Rectangle rectangle = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
-                LinearGradientBrush gradientBrush = new LinearGradientBrush(rectangle, Color.Transparent, Color.Transparent, angle);
-                ColorBlend colorBlend = new ColorBlend(colors.Length);
-                colorBlend.Colors = colors;
-                colorBlend.Positions = positions;
-                gradientBrush.InterpolationColors = colorBlend;
-                graphics.FillRectangle(gradientBrush, rectangle);
+                using (LinearGradientBrush gradientBrush = new LinearGradientBrush(rectangle, Color.Transparent, Color.Transparent, angle))
+                {
+                    gradientBrush.InterpolationColors = colorBlend;
+                    graphics.FillRectangle(gradientBrush, rectangle);
+                }
             }
             return bitmap;
         }

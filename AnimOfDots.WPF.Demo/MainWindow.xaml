@@ -14,12 +14,14 @@
             <Button Name="StopButton" Content="Stop" Margin="5,0,0,0" Click="StopButton_Click" />
             <CheckBox Name="RunningCheckBox" Content="Running property" Margin="5,0,0,0"
                       Checked="RunningCheckBox_Changed" Unchecked="RunningCheckBox_Changed" />
-            <CheckBox Name="HideOnStopCheckBox" Content="HideOnStop" Margin="5,0,0,0"
+            <CheckBox Name="HideOnStopCheckBox" Content="HideOnStop" Margin="5,0,0,0" IsChecked="True"
                       Checked="HideOnStopCheckBox_Changed" Unchecked="HideOnStopCheckBox_Changed" />
             <StackPanel Orientation="Horizontal" Margin="5,0,0,0" VerticalAlignment="Center">
                 <TextBlock Text="Speed" VerticalAlignment="Center" />
                 <Slider Name="SpeedSlider" Width="150" Minimum="1" Maximum="100" Value="50"
                         Margin="5,0,0,0" ValueChanged="SpeedSlider_ValueChanged" />
+                <TextBlock Text="{Binding ElementName=SpeedSlider, Path=Value, StringFormat={}{0:0}}"
+                           VerticalAlignment="Center" Margin="5,0,0,0" MinWidth="25" />
             </StackPanel>
         </StackPanel>
 

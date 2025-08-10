@@ -1,52 +1,55 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace AnimOfDots {
-    public class Animator {
-
-        private bool isStarted = false;
+namespace AnimOfDots
+{
+    public sealed class Animator
+    {
         private const int MAX_SPEED = 101;
         private readonly int maxValue = 0;
+        private readonly int maxValuePlusOne = 0;
         private int animationSpeed = 50;
         private readonly Timer timer = new Timer();
         private AnimatorStart animStart;
+        public bool Running => timer.Enabled;
 
-        public int AnimationSpeed {
+        public int AnimationSpeed
+        {
             get => animationSpeed;
-            set {
-                if (value < MAX_SPEED) {
+            set
+            {
+                if (value < MAX_SPEED)
+                {
                     animationSpeed = value;
-                    timer.Interval = ((maxValue + 1) - ((maxValue * value) / 100));
-                } else {
+                    timer.Interval = maxValuePlusOne - ((maxValue * value) / 100);
+                } else
+                {
                     throw new ArgumentOutOfRangeException();
                 }
             }
         }
 
-        public Animator(int speedBalance) {
+        public Animator(int speedBalance)
+        {
             maxValue = (speedBalance * 2) + 1;
+            maxValuePlusOne = maxValue + 1;
             timer.Interval = speedBalance;
-            timer.Tick += new EventHandler(TimerTick);
+            timer.Tick += TimerTick;
         }
 
-        public void Start(AnimatorStart animStart) {
-            if (!isStarted) {
-                if (animStart != this.animStart) {
-                    this.animStart = animStart;
-                }
-                timer.Enabled = true;
-                isStarted = true;
-            }
+        public void Start(AnimatorStart animStart)
+        {
+            this.animStart = animStart;
+            timer.Start();
         }
 
-        public void Stop() {
-            if (isStarted) {
-                timer.Enabled = false;
-                isStarted = false;
-            }
+        public void Stop()
+        {
+            timer.Stop();
         }
 
-        private void TimerTick(object sender, EventArgs eventArgs) {
+        private void TimerTick(object sender, EventArgs eventArgs)
+        {
             animStart();
         }
     }

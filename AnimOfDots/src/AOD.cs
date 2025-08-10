@@ -9,7 +9,6 @@ namespace AnimOfDots
         public class BaseControl : Control
         {
             private Animator animator;
-            private bool isRunning;
             private bool hideOnStop = true;
 
             public override string Text => "";
@@ -25,10 +24,10 @@ namespace AnimOfDots
             [Description("Determines whether the control's animation is running."), DefaultValue(false)]
             public bool Running
             {
-                get => isRunning;
+                get => animator?.Running ?? false;
                 set
                 {
-                    if (isRunning == value)
+                    if ((animator?.Running ?? false) == value)
                         return;
 
                     if (value)
@@ -62,23 +61,21 @@ namespace AnimOfDots
 
             public virtual void Start()
             {
-                if (!isRunning)
+                if (!animator.Running)
                 {
                     Show();
                     animator.Start(Animate);
-                    isRunning = true;
                 }
             }
 
             public virtual void Stop()
             {
-                if (isRunning)
+                if (animator.Running)
                 {
                     if (hideOnStop)
                         Hide();
                     animator.Stop();
                     Reset();
-                    isRunning = false;
                 }
             }
 
