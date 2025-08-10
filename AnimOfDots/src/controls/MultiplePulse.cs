@@ -25,21 +25,26 @@ namespace AnimOfDots {
 
         protected override void Animate() {
             base.Animate();
+
+            float h = Height;
             for (int i = 0; i < dotSize.Length - 1; i++) {
-                dotSize[i] = (dotSize[i] + sizeChangeInterval) % Height;
+                dotSize[i] = (dotSize[i] + sizeChangeInterval) % h;
             }
             for (int i = 0; i < colorOpacity.Length; i++) {
-                colorOpacity[i] = (byte)((colorOpacity[i] + 5) % 256);
-                colorAlpha[i] = (byte)(255 - colorOpacity[i]);
+                byte opacity = (byte)((colorOpacity[i] + 5) % 256);
+
+                colorOpacity[i] = opacity;
+                colorAlpha[i] = (byte)(255 - opacity);
             }
 
+            float halfW = Width / 2f;
+            float halfH = h / 2f;
+            Color foreColor = ForeColor;
             for (int i = 0; i < rects.Length; i++)
             {
-                rects[i].X = (Width - dotSize[i]) / 2f;
-                rects[i].Y = (Height - dotSize[i]) / 2f;
-                rects[i].Width = dotSize[i];
-                rects[i].Height = dotSize[i];
-                brushes[i].Color = Color.FromArgb(colorAlpha[i], ForeColor);
+                float size = dotSize[i];
+                rects[i] = new RectangleF(halfW - size / 2f, halfH - size / 2f, size, size);
+                brushes[i].Color = Color.FromArgb(colorAlpha[i], foreColor);
             }
             Invalidate();
         }
