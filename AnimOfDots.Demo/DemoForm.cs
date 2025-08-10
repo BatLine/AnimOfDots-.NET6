@@ -2,6 +2,9 @@ namespace AnimOfDots.Demo
 {
     public partial class DemoForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DemoForm"/> class.
+        /// </summary>
         public DemoForm()
         {
             InitializeComponent();

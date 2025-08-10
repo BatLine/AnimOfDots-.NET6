@@ -3,6 +3,13 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace AnimOfDots {
+    /// <summary>
+    /// Represents a custom control that displays three animated dots, which scale in size over time.
+    /// </summary>
+    /// <remarks>The <see cref="DotScaling"/> control animates three dots that grow and shrink in size
+    /// cyclically.  The colors of the dots can be customized using the <see cref="Colors"/> property. The control 
+    /// automatically adjusts the size and position of the dots based on its dimensions, and it supports  smooth
+    /// animations with double buffering enabled.</remarks>
     public class DotScaling : AOD.BaseControl {
 
         private readonly RectangleF[] rects = new RectangleF[3];
@@ -15,6 +22,9 @@ namespace AnimOfDots {
 
         public override Color ForeColor => Color.Transparent;
 
+        /// <summary>
+        /// Gets or sets an array of colors associated with the brushes.
+        /// </summary>
         public Color[] Colors {
             get {
                 Color[] tempColors = new Color[brushes.Length];
@@ -35,6 +45,9 @@ namespace AnimOfDots {
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DotScaling"/> class.
+        /// </summary>
         public DotScaling() {
             DoubleBuffered = true;
             AnimationSpeedBalance(50);

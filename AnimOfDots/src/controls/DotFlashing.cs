@@ -14,6 +14,9 @@ namespace AnimOfDots {
         public override Color ForeColor => Color.Transparent;
 
         private Color primaryColor = Color.Orange;
+        /// <summary>
+        /// Gets or sets the primary color used for the component's appearance.
+        /// </summary>
         public Color PrimaryColor {
             get => primaryColor;
             set {
@@ -23,6 +26,11 @@ namespace AnimOfDots {
         }
 
         private Color secondaryColor = Color.Wheat;
+        /// <summary>
+        /// Gets or sets the secondary color used in the application.
+        /// </summary>
+        /// <remarks>Setting this property updates the secondary color and triggers a color change
+        /// operation.</remarks>
         public Color SecondaryColor {
             get => secondaryColor;
             set {
@@ -31,6 +39,9 @@ namespace AnimOfDots {
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DotFlashing"/> class.
+        /// </summary>
         public DotFlashing() {
             DoubleBuffered = true;
             AnimationSpeedBalance(100);

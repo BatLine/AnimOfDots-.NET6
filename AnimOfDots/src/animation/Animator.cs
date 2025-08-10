@@ -11,8 +11,15 @@ namespace AnimOfDots
         private int animationSpeed = 50;
         private readonly Timer timer = new Timer();
         private AnimatorStart animStart;
+
+        /// <summary>
+        /// Gets a value indicating whether the timer is currently running.
+        /// </summary>
         public bool Running => timer.Enabled;
 
+        /// <summary>
+        /// Gets or sets the animation speed as a percentage of the maximum speed.
+        /// </summary>
         public int AnimationSpeed
         {
             get => animationSpeed;
@@ -29,6 +36,10 @@ namespace AnimOfDots
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Animator"/> class.
+        /// </summary>
+        /// <param name="speedBalance">The base timer interval.</param>
         public Animator(int speedBalance)
         {
             maxValue = (speedBalance * 2) + 1;
@@ -37,12 +48,19 @@ namespace AnimOfDots
             timer.Tick += TimerTick;
         }
 
+        /// <summary>
+        /// Starts the animation loop using the provided callback.
+        /// </summary>
+        /// <param name="animStart">Callback invoked on each tick.</param>
         public void Start(AnimatorStart animStart)
         {
             this.animStart = animStart;
             timer.Start();
         }
 
+        /// <summary>
+        /// Stops the animation loop.
+        /// </summary>
         public void Stop()
         {
             timer.Stop();

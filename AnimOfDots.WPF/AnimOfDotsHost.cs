@@ -11,6 +11,9 @@ namespace AnimOfDots.WPF
     {
         private readonly TSpinner spinner = new TSpinner();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnimOfDotsHost{TSpinner}"/> class.
+        /// </summary>
         public AnimOfDotsHost()
         {
             Child = spinner;

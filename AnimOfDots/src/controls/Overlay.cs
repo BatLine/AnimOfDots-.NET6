@@ -3,8 +3,14 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace AnimOfDots {
+    /// <summary>
+    /// Represents a graphical overlay control that displays animated color patterns.
+    /// </summary>
+    /// <remarks>The <see cref="Overlay"/> class is a custom control that renders an animated graphical
+    /// display using a palette of colors. It supports customization of the color palette through the <see
+    /// cref="Colors"/> property. The control is double-buffered to ensure smooth animations and automatically adjusts
+    /// its layout and appearance when resized.</remarks>
     public class Overlay : AOD.BaseControl {
-
         private Bitmap bitmapColorPalette = null;
         private Bitmap bmp;
         private readonly SolidBrush[] solidBrushes = new SolidBrush[8];
@@ -15,9 +21,12 @@ namespace AnimOfDots {
         private float sizeW = 0, sizeH = 0;
         private int[] imagePixel;
 
-        public Color[] colors = new Color[3] { Color.DodgerBlue,
+        private Color[] colors = new Color[3] { Color.DodgerBlue,
                                                Color.FromArgb(100, Color.DeepSkyBlue),
                                                Color.FromArgb(0, Color.LightSkyBlue) };
+        /// <summary>
+        /// Gets or sets an array of colors used in the color palette.
+        /// </summary>
         public Color[] Colors {
             get => colors;
             set {
@@ -34,6 +43,9 @@ namespace AnimOfDots {
 
         public override Color ForeColor => base.ForeColor;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Overlay"/> class.
+        /// </summary>
         public Overlay() {
             DoubleBuffered = true;
             AnimationSpeedBalance(100);

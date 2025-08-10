@@ -4,6 +4,12 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace AnimOfDots {
+    /// <summary>
+    /// Represents a circular control with animated, colorful dots that rotate and change colors.
+    /// </summary>
+    /// <remarks>The <see cref="ColorfulCircular"/> control is a custom UI element that displays a circular
+    /// animation with dots that rotate and change colors over time. The animation speed, size, and colors of the dots
+    /// can be customized. This control is double-buffered to reduce flickering during rendering.</remarks>
     public class ColorfulCircular : AOD.BaseControl {
 
         private Bitmap bmp;
@@ -13,6 +19,9 @@ namespace AnimOfDots {
         private int colorListCount = 0, rotation, coordination = 0, circleSize = 10, dotSize = 5;
 
         private Color[] colors = new Color[] {  Color.Red, Color.DodgerBlue, Color.LimeGreen, Color.Gold };
+        /// <summary>
+        /// Gets or sets the array of colors used for rendering.
+        /// </summary>
         public Color[] Colors {
             get => colors;
             set {
@@ -22,6 +31,9 @@ namespace AnimOfDots {
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColorfulCircular"/> class.
+        /// </summary>
         public ColorfulCircular() {
             DoubleBuffered = true;
             AnimationSpeedBalance(40);

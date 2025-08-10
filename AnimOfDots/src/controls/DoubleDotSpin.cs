@@ -3,8 +3,14 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace AnimOfDots {
+    /// <summary>
+    /// Represents a spinning animation control with two dots that rotate around a central axis.
+    /// </summary>
+    /// <remarks>The <see cref="DoubleDotSpin"/> control is a custom UI element that displays two dots
+    /// rotating around a central point. The primary and secondary colors of the dots can be customized using the <see
+    /// cref="PrimaryColor"/> and <see cref="SecondaryColor"/> properties. The control is double-buffered to ensure
+    /// smooth animations and automatically adjusts its layout when resized.</remarks>
     public class DoubleDotSpin : AOD.BaseControl {
-
         private Bitmap bitmap;
         private float dotSize = 0f;
         private readonly PointF[] pf = new PointF[2];
@@ -14,6 +20,9 @@ namespace AnimOfDots {
         private int angle = 0;
 
         private readonly SolidBrush primaryColor = new SolidBrush(Color.DodgerBlue);
+        /// <summary>
+        /// Gets or sets the primary color used for rendering the ellipse.
+        /// </summary>
         public Color PrimaryColor {
             get { return primaryColor.Color; }
             set {
@@ -23,6 +32,9 @@ namespace AnimOfDots {
         }
 
         private readonly SolidBrush secondaryColor = new SolidBrush(Color.Orange);
+        /// <summary>
+        /// Gets or sets the secondary color used for rendering.
+        /// </summary>
         public Color SecondaryColor {
             get { return secondaryColor.Color; }
             set {
@@ -31,6 +43,9 @@ namespace AnimOfDots {
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DoubleDotSpin"/> class.
+        /// </summary>
         public DoubleDotSpin() {
             DoubleBuffered = true;
             AnimationSpeedBalance(40);

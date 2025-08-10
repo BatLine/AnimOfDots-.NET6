@@ -4,6 +4,13 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace AnimOfDots {
+    /// <summary>
+    /// Represents a circular animated control that rotates and displays a series of dots in a circular pattern.
+    /// </summary>
+    /// <remarks>The <see cref="Circular"/> control is a custom UI element that animates a rotating circular
+    /// pattern. It is double-buffered to reduce flickering during animation and supports customization of its size and
+    /// color. The control automatically adjusts its internal configuration when resized and updates its appearance when
+    /// the <see cref="System.Windows.Forms.Control.ForeColor"/> property changes.</remarks>
     public class Circular : AOD.BaseControl {
 
         private Bitmap bmp;
@@ -12,6 +19,9 @@ namespace AnimOfDots {
         private Point p = new Point(0, 0);
         private readonly SolidBrush solidBrush = new SolidBrush(Color.DodgerBlue);
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Circular"/> class.
+        /// </summary>
         public Circular() {
             DoubleBuffered = true;
             AnimationSpeedBalance(40);

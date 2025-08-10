@@ -3,8 +3,15 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace AnimOfDots {
+    /// <summary>
+    /// Represents a control that displays multiple animated pulsing dots, with customizable size and opacity
+    /// transitions.
+    /// </summary>
+    /// <remarks>The <see cref="MultiplePulse"/> control is designed to provide a visually appealing animation
+    /// of pulsing dots. The animation dynamically adjusts the size and opacity of the dots based on the control's
+    /// dimensions and foreground color. This control is double-buffered to reduce flickering during
+    /// rendering.</remarks>
     public class MultiplePulse : AOD.BaseControl {
-
         private readonly SolidBrush[] brushes = new[] {
             new SolidBrush(Color.DodgerBlue),
             new SolidBrush(Color.DodgerBlue),
@@ -17,6 +24,9 @@ namespace AnimOfDots {
         private readonly float[] dotSize = new float[4];
         private float sizeChangeInterval;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MultiplePulse"/> class.
+        /// </summary>
         public MultiplePulse() {
             DoubleBuffered = true;
             AnimationSpeedBalance(40);
