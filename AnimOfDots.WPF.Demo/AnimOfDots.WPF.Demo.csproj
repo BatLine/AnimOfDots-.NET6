@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net5.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
+		<EnableWindowsTargeting>true</EnableWindowsTargeting>
+		<RootNamespace>AnimOfDots.WPF.Demo</RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\AnimOfDots.WPF\AnimOfDots.WPF.csproj" />
+	</ItemGroup>
+</Project>

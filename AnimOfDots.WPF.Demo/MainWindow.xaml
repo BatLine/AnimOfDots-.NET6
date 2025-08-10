@@ -1,0 +1,69 @@
+﻿<Window x:Class="AnimOfDots.WPF.Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:AnimOfDots.WPF.Controls;assembly=AnimOfDots.WPF"
+        Title="AnimOfDots Demo" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <Button Name="StartButton" Content="Start" Click="StartButton_Click" />
+            <Button Name="StopButton" Content="Stop" Margin="5,0,0,0" Click="StopButton_Click" />
+            <CheckBox Name="RunningCheckBox" Content="Running property" Margin="5,0,0,0"
+                      Checked="RunningCheckBox_Changed" Unchecked="RunningCheckBox_Changed" />
+            <CheckBox Name="HideOnStopCheckBox" Content="HideOnStop" Margin="5,0,0,0"
+                      Checked="HideOnStopCheckBox_Changed" Unchecked="HideOnStopCheckBox_Changed" />
+            <StackPanel Orientation="Horizontal" Margin="5,0,0,0" VerticalAlignment="Center">
+                <TextBlock Text="Speed" VerticalAlignment="Center" />
+                <Slider Name="SpeedSlider" Width="150" Minimum="1" Maximum="100" Value="50"
+                        Margin="5,0,0,0" ValueChanged="SpeedSlider_ValueChanged" />
+            </StackPanel>
+        </StackPanel>
+
+        <WrapPanel Grid.Row="1">
+            <StackPanel Margin="5">
+                <controls:Circular x:Name="CircularControl" Width="50" Height="50" />
+                <TextBlock Text="Circular" HorizontalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Margin="5">
+                <controls:ColorfulCircular x:Name="ColorfulCircularControl" Width="50" Height="50" />
+                <TextBlock Text="ColorfulCircular" HorizontalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Margin="5">
+                <controls:DotFlashing x:Name="DotFlashingControl" Width="50" Height="50" />
+                <TextBlock Text="DotFlashing" HorizontalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Margin="5">
+                <controls:DotGridFlashing x:Name="DotGridFlashingControl" Width="50" Height="50" />
+                <TextBlock Text="DotGridFlashing" HorizontalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Margin="5">
+                <controls:DotScaling x:Name="DotScalingControl" Width="50" Height="50" />
+                <TextBlock Text="DotScaling" HorizontalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Margin="5">
+                <controls:DotTyping x:Name="DotTypingControl" Width="50" Height="50" />
+                <TextBlock Text="DotTyping" HorizontalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Margin="5">
+                <controls:DoubleDotSpin x:Name="DoubleDotSpinControl" Width="50" Height="50" />
+                <TextBlock Text="DoubleDotSpin" HorizontalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Margin="5">
+                <controls:MultiplePulse x:Name="MultiplePulseControl" Width="50" Height="50" />
+                <TextBlock Text="MultiplePulse" HorizontalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Margin="5">
+                <controls:Overlay x:Name="OverlayControl" Width="50" Height="50" />
+                <TextBlock Text="Overlay" HorizontalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Margin="5">
+                <controls:Pulse x:Name="PulseControl" Width="50" Height="50" />
+                <TextBlock Text="Pulse" HorizontalAlignment="Center" />
+            </StackPanel>
+        </WrapPanel>
+    </Grid>
+</Window>
