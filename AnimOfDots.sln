@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimOfDots.WPF", "AnimOfDot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimOfDots.WPF.Demo", "AnimOfDots.WPF.Demo\AnimOfDots.WPF.Demo.csproj", "{6B8941C7-92E8-4887-AC64-312C9BDBFB29}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimOfDots.MAUI", "AnimOfDots.MAUI\AnimOfDots.MAUI.csproj", "{ECEF00FE-2128-4F4D-A383-EC8E429E7FC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6B8941C7-92E8-4887-AC64-312C9BDBFB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B8941C7-92E8-4887-AC64-312C9BDBFB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B8941C7-92E8-4887-AC64-312C9BDBFB29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECEF00FE-2128-4F4D-A383-EC8E429E7FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECEF00FE-2128-4F4D-A383-EC8E429E7FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECEF00FE-2128-4F4D-A383-EC8E429E7FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECEF00FE-2128-4F4D-A383-EC8E429E7FC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
